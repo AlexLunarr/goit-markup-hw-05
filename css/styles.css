@@ -65,6 +65,8 @@ rgba(255, 255, 255, 0.6);
   --background-color-button-two: #f5f4fa;
   --margin-portfolio-item: 30px;
   --background-color-icon: #afb1b8;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --time: 250ms;
 }
 /* глобальні налаштування */
 
@@ -171,6 +173,8 @@ img {
   color: var(--main-color);
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--time) var(--cubic);
 }
 
 .header-nav-link.active,
@@ -215,6 +219,8 @@ img {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--time) var(--cubic);
 }
 
 /* <!-- Черная секция герой --> */
@@ -291,16 +297,24 @@ img {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   z-index: 1;
+  opacity: 1;
+  transition: opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   min-width: 528px;
   min-height: 581px;
@@ -309,6 +323,9 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: transform var(--time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-button {
   display: flex;
@@ -501,6 +518,9 @@ img {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+
+  transition: color var(--time) var(--cubic),
+    background-color var(--time) var(--cubic);
 }
 .team-icon {
   fill: currentColor;
@@ -545,6 +565,9 @@ img {
   border-radius: 4px;
   width: 170px;
   height: 92px;
+
+  transition: color var(--time) var(--cubic),
+    background-color var(--time) var(--cubic);
 }
 .client-icon {
   fill: currentColor;
@@ -591,6 +614,7 @@ img {
 .address-item-link {
   text-decoration: none;
   color: var(--color-mail);
+  transition: color var(--time) var(--cubic);
 }
 
 .address-item-link:hover,
@@ -628,6 +652,7 @@ img {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  transition: background-color var(--time) var(--cubic);
 }
 .social-icon {
   fill: currentColor;
@@ -672,6 +697,9 @@ img {
   border: none;
 
   padding: 6px 22px;
+  transition: color var(--time) var(--cubic),
+    background-color var(--time) var(--cubic),
+    box-shadow var(--time) var(--cubic);
 }
 .filters-button.active {
   background-color: var(--background-color-button);
@@ -718,7 +746,8 @@ img {
   background: rgba(33, 150, 243, 0.9);
   opacity: 0;
   transform: translatey(100%);
-  transition: transform 250ms ease;
+  transition: transform var(--time) var(--cubic),
+    opacity var(--time) var(--cubic);
 }
 .portfolio-tumb-text {
   height: 100%;
@@ -736,13 +765,15 @@ img {
 .portfolio-link {
   text-decoration: none;
   display: block;
+  transition: box-shadow var(--time) var(--cubic);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-link:hover .portfolio-overlay {
+.portfolio-link:hover .portfolio-overlay,
+.portfolio-link:focus .portfolio-overlay {
   opacity: 1;
   transform: translatey(0);
 }
