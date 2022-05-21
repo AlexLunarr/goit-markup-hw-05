@@ -72,9 +72,7 @@ rgba(255, 255, 255, 0.6);
 
 body {
   font-family: "Roboto", sans-serif;
-
   font-size: 14px;
-
   color: var(--main-color);
   background-color: var(--main-background-color);
 }
@@ -143,8 +141,8 @@ img {
 .header-logo-blue,
 .footer-logo-blue {
   display: block;
-  font-family: "Raleway";
 
+  font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -165,12 +163,14 @@ img {
 
 .header-nav-link {
   display: block;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--main-color);
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -188,13 +188,15 @@ img {
   position: relative;
 }
 .header-nav-link.active::after {
+  content: "";
   position: absolute;
+  display: block;
+
   bottom: -1px;
   left: 0;
-  content: "";
   width: 100%;
   height: 4px;
-  display: block;
+
   background-color: #2196f3;
   border-radius: 2px;
 }
@@ -211,12 +213,14 @@ img {
 .header-link {
   display: flex;
   align-items: center;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--color-text);
   text-decoration: none;
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -232,6 +236,7 @@ img {
   width: 1600px;
   margin-left: auto;
   margin-right: auto;
+
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -251,6 +256,8 @@ img {
   width: 696px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -259,17 +266,18 @@ img {
   text-transform: uppercase;
 
   color: var(--color-logo-three);
-  margin-bottom: 30px;
 }
 
 .hero-button {
   border: none;
   display: block;
+
+  padding: 10px 32px;
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  /* display: flex; */
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
@@ -285,19 +293,22 @@ img {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  padding: 10px 32px;
 }
 
 /* МОДАЛКА */
 .backdrop {
   position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
   background: rgba(0, 0, 0, 0.2);
+
   z-index: 1;
   opacity: 1;
+
   transition: opacity var(--time) var(--cubic),
     visibility var(--time) var(--cubic);
 }
@@ -322,6 +333,7 @@ img {
   background: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -331,6 +343,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+
   position: absolute;
   right: 8px;
   top: 8px;
@@ -338,9 +351,11 @@ img {
 
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  background: #ffffff;
+
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  background: #ffffff;
 }
 
 /* <!-- Характеристики --> */
@@ -378,7 +393,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 30px;
+
   background-color: var(--background-color-button-two);
   border-radius: 4px;
 }
@@ -429,15 +446,18 @@ img {
   display: block;
 }
 .activity-label {
+  display: flex;
   position: absolute;
   bottom: 0;
   left: 0;
+  height: 70px;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(47, 48, 58, 0.8);
 }
 .activity-label-text {
-  padding-top: 27px;
-  padding-bottom: 27px;
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -446,7 +466,6 @@ img {
   text-transform: uppercase;
 
   color: var(--color-button-one);
-  background: rgba(47, 48, 58, 0.8);
 }
 
 /*  <!-- Наша команда --> */
@@ -567,7 +586,7 @@ img {
   height: 92px;
 
   transition: color var(--time) var(--cubic),
-    background-color var(--time) var(--cubic);
+    border-color var(--time) var(--cubic);
 }
 .client-icon {
   fill: currentColor;
@@ -623,6 +642,7 @@ img {
 }
 
 .social-text {
+  display: block;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -647,11 +667,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main-background-color);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
   width: 44px;
   height: 44px;
+
+  border-radius: 50%;
+
+  color: var(--main-background-color);
+  background-color: rgba(255, 255, 255, 0.1);
+
   transition: background-color var(--time) var(--cubic);
 }
 .social-icon {
@@ -661,8 +684,8 @@ img {
 .social-icon-link:focus {
   background-color: var(--color-hover);
 }
-/*  <!-- Основной контент portfolio */
-
+/*  Основной контент portfolio */
+/* Кнопки */
 .portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -687,16 +710,18 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
 
+  padding: 6px 22px;
+  border-radius: 4px;
+
   cursor: pointer;
 
   background-color: var(--background-color-button-two);
   color: var(--main-color);
 
   background: #f5f4fa;
-  border-radius: 4px;
+
   border: none;
 
-  padding: 6px 22px;
   transition: color var(--time) var(--cubic),
     background-color var(--time) var(--cubic),
     box-shadow var(--time) var(--cubic);
@@ -707,7 +732,7 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* .button:current(.filters-button), */
+
 .filters-button:active,
 .filters-button:hover,
 .filters-button:focus {
@@ -717,11 +742,12 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+/* Карточки */
 .portfolio-list {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+
   display: flex;
   flex-wrap: wrap;
   margin-left: calc(-1 * var(--margin-portfolio-item));
@@ -731,6 +757,7 @@ img {
   flex-basis: calc(100% / 3 - var(--margin-portfolio-item));
   margin-left: var(--margin-portfolio-item);
   margin-top: var(--margin-portfolio-item);
+
   border: var(--color-border) solid 1px;
 }
 .portfolio-item-tumb {
@@ -743,8 +770,10 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+
   background: rgba(33, 150, 243, 0.9);
   opacity: 0;
+
   transform: translatey(100%);
   transition: transform var(--time) var(--cubic),
     opacity var(--time) var(--cubic);
@@ -756,6 +785,7 @@ img {
   padding-right: 24px;
   padding-top: 63px;
   padding-bottom: 63px;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
